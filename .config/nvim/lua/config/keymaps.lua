@@ -2,10 +2,11 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
--- In terminal mode, send Ctrl+L to shell (clear) instead of Snacks window nav
+-- Ctrl+L in normal mode of terminal buffer: enter terminal mode and clear
 vim.api.nvim_create_autocmd("TermOpen", {
   callback = function(args)
-    vim.keymap.set("t", "<C-l>", function()
+    vim.keymap.set("n", "<C-l>", function()
+      vim.cmd("startinsert")
       vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-l>", true, false, true), "n", false)
     end, { buffer = args.buf, desc = "Clear terminal" })
   end,
