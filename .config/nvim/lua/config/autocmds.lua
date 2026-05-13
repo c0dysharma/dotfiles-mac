@@ -7,6 +7,80 @@
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
+-- Force transparent bg on all relevant highlight groups (terminal, floats, etc.)
+vim.api.nvim_create_autocmd("ColorScheme", {
+  group = vim.api.nvim_create_augroup("force_transparent", { clear = true }),
+  callback = function()
+    local groups = {
+      "Normal", "NormalNC", "NormalFloat", "FloatBorder", "FloatTitle",
+      "SignColumn", "EndOfBuffer", "TabLine", "TabLineFill",
+      "SnacksDashboard", "SnacksDashboardNormal", "SnacksTerminal",
+      "NeoTreeNormal", "NeoTreeNormalNC",
+      "WhichKey", "WhichKeyFloat",
+    }
+    for _, g in ipairs(groups) do
+      vim.api.nvim_set_hl(0, g, { bg = "NONE" })
+    end
+  end,
+})
+
+-- Trigger on startup too
+vim.schedule(function()
+  vim.cmd("doautocmd ColorScheme")
+end)
+
+-- Persist terminal height across sessions
+local state_dir = vim.fn.stdpath("config") .. "/.state"
+vim.fn.mkdir(state_dir, "p")
+local term_state = state_dir .. "/term_height"
+local function read_height()
+  local f = io.open(term_state, "r")
+  if not f then return nil end
+  local h = tonumber(f:read("*a"))
+  f:close()
+  return h
+end
+local function write_height(h)
+  local f = io.open(term_state, "w")
+  if f then f:write(tostring(h)); f:close() end
+end
+
+vim.api.nvim_create_autocmd({ "TermOpen", "BufWinEnter" }, {
+  group = vim.api.nvim_create_augroup("persist_term_height", { clear = true }),
+  callback = function(args)
+    if vim.bo[args.buf].buftype ~= "terminal" then return end
+    local h = read_height()
+    if h and h > 0 then
+      vim.defer_fn(function()
+        local win = vim.fn.bufwinid(args.buf)
+        if win ~= -1 and vim.api.nvim_win_is_valid(win) then
+          local cfg = vim.api.nvim_win_get_config(win)
+          if cfg.relative == "" then
+            vim.api.nvim_win_set_height(win, h)
+          end
+        end
+      end, 50)
+    end
+  end,
+})
+
+vim.api.nvim_create_autocmd("WinResized", {
+  group = "persist_term_height",
+  callback = function()
+    for _, win in ipairs(vim.v.event.windows or {}) do
+      if vim.api.nvim_win_is_valid(win) then
+        local buf = vim.api.nvim_win_get_buf(win)
+        if vim.bo[buf].buftype == "terminal" then
+          local cfg = vim.api.nvim_win_get_config(win)
+          if cfg.relative == "" then
+            write_height(vim.api.nvim_win_get_height(win))
+          end
+        end
+      end
+    end
+  end,
+})
+
 -- Clean up stale [No Name] buffers left by claudecode.nvim diff tabs
 vim.api.nvim_create_autocmd("BufEnter", {
   group = vim.api.nvim_create_augroup("cleanup_noname_buffers", { clear = true }),

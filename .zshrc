@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="af-magic"
+ZSH_THEME="kolo"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -104,3 +104,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias nv="nvim"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias run_web_ui="WEBUI_AIAUTHORING_DEV=true WEBPACK_DEV_OVERLAY=false SETTINGS_ENV=production-eu-local ./node_modules/.bin/webpack-dashboard -m -t 'web-ui: webpack' -- ./node_modules/.bin/webpack-dev-server --config ./.config/webpack --host 0.0.0.0 --server-type https --server-options-cert local-ui.staging.saucelabs.net+4.pem --server-options-key local-ui.staging.saucelabs.net+4-key.pem"
+alias run_be_server='set -a && source .env && set +a && npm run dev 2>&1 | tee /tmp/ai-authoring-dev.log'
+
+# Created by `pipx` on 2026-05-11 07:08:18
+export PATH="$PATH:/Users/kuldeep/.local/bin"
