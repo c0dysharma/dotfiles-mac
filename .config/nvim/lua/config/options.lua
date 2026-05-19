@@ -2,6 +2,9 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 vim.opt.autowrite = true
+vim.opt.wrap = true
+vim.opt.linebreak = true   -- wrap at word boundary, not mid-word
+vim.opt.breakindent = true -- wrapped lines keep indentation
 
 -- Use blank space instead of diagonal hatching for diff filler lines
 vim.opt.fillchars:append({ diff = " " })
