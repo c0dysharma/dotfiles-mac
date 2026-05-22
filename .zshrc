@@ -109,3 +109,4 @@ alias run_be_server='set -a && source .env && set +a && npm run dev 2>&1 | tee /
 
 # Created by `pipx` on 2026-05-11 07:08:18
 export PATH="$PATH:/Users/kuldeep/.local/bin"
+export PATH=/opt/homebrew/share/google-cloud-sdk/bin:"$PATH"
