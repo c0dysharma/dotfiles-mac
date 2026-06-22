@@ -110,3 +110,10 @@ alias run_be_server='set -a && source .env && set +a && npm run dev 2>&1 | tee /
 # Created by `pipx` on 2026-05-11 07:08:18
 export PATH="$PATH:/Users/kuldeep/.local/bin"
 export PATH=/opt/homebrew/share/google-cloud-sdk/bin:"$PATH"
+
+#volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+alias run_be_worker='set -a && source .env && set +a && npm run dev:worker 2>&1 | tee /tmp/ai-authoring-worker.log'
+
+
