@@ -81,6 +81,27 @@ vim.api.nvim_create_autocmd("WinResized", {
   end,
 })
 
+-- If terminal becomes only window, open blank buffer above so terminal doesn't fullscreen
+vim.api.nvim_create_autocmd("BufEnter", {
+  group = vim.api.nvim_create_augroup("keep_term_split", { clear = true }),
+  callback = function()
+    local wins = vim.api.nvim_tabpage_list_wins(0)
+    if #wins ~= 1 then return end
+    local buf = vim.api.nvim_win_get_buf(wins[1])
+    if vim.bo[buf].buftype ~= "terminal" then return end
+    local term_win = wins[1]
+    local saved_h = read_height() or 15
+    vim.schedule(function()
+      if not vim.api.nvim_win_is_valid(term_win) then return end
+      vim.cmd("aboveleft new")
+      local term_win_after = vim.fn.bufwinid(buf)
+      if term_win_after ~= -1 then
+        vim.api.nvim_win_set_height(term_win_after, saved_h)
+      end
+    end)
+  end,
+})
+
 -- Clean up stale [No Name] buffers left by claudecode.nvim diff tabs
 vim.api.nvim_create_autocmd("BufEnter", {
   group = vim.api.nvim_create_augroup("cleanup_noname_buffers", { clear = true }),
