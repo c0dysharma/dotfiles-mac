@@ -31,18 +31,18 @@ return {
         if vim.wo.diff then
           vim.cmd.normal({ "]c", bang = true })
         else
-          gs.nav_hunk("next")
+          gs.nav_hunk("next", { target = "all" })
         end
       end, "Next Hunk")
       map("n", "[h", function()
         if vim.wo.diff then
           vim.cmd.normal({ "[c", bang = true })
         else
-          gs.nav_hunk("prev")
+          gs.nav_hunk("prev", { target = "all" })
         end
       end, "Prev Hunk")
-      map("n", "]H", function() gs.nav_hunk("last") end, "Last Hunk")
-      map("n", "[H", function() gs.nav_hunk("first") end, "First Hunk")
+      map("n", "]H", function() gs.nav_hunk("last", { target = "all" }) end, "Last Hunk")
+      map("n", "[H", function() gs.nav_hunk("first", { target = "all" }) end, "First Hunk")
       map({ "n", "x" }, "<leader>ghs", ":Gitsigns stage_hunk<CR>", "Stage Hunk")
       map({ "n", "x" }, "<leader>ghr", ":Gitsigns reset_hunk<CR>", "Reset Hunk")
       map("n", "<leader>ghS", gs.stage_buffer, "Stage Buffer")
