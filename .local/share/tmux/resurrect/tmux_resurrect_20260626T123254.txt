@@ -1,0 +1,91 @@
+pane	0	0	1	:*	0	SL-2491	:/Users/kuldeep/Documents/ai-authoring	1	nvim	:nvim
+pane	0	0	1	:*	1	✳ biq-1103 tags for testcases testing.	:/Users/kuldeep/Documents/ai-authoring	0	claude	:claude --resume building docker locally
+pane	0	1	0	:	0	SL-2491	:/Users/kuldeep/Documents/web-ui	0	make	:/Library/Developer/CommandLineTools/usr/bin/make mock
+pane	0	1	0	:	1	SL-2491	:/Users/kuldeep/Documents/web-ui	0	volta-shim	:node ./node_modules/.bin/webpack-dashboard -m -t web-ui: webpack -- ./node_modules/.bin/webpack-dev-server --config ./.config/webpack --host 0.0.0.0 --server-type https --server-options-cert local-ui.staging.saucelabs.net+4.pem --server-options-key local-ui.staging.saucelabs.net+4-key.pem
+pane	0	1	0	:	2	:/Users/kuldeep/.config	:/Users/kuldeep/Documents/ai-authoring	0	zsh	:
+pane	0	1	0	:	3	SL-2491	:/Users/kuldeep/Documents/ai-authoring	1	volta-shim	:npm run dev
+tee /tmp/ai-authoring-dev.log
+pane	0	1	0	:	4	SL-2491	:/Users/kuldeep/Documents/ai-authoring	0	zsh	:
+pane	0	2	0	:	0	✳ fixing yt-x execution	:/Users/kuldeep	1	claude	:claude -r
+pane	0	3	0	:-	0	:/Users/kuldeep	:/Users/kuldeep	0	zsh	:
+pane	0	3	0	:-	1	:/Users/kuldeep	:/Users/kuldeep	1	zsh	:
+pane	0	3	0	:-	2	SL-2491	:/Users/kuldeep	0	zsh	:
+pane	0	4	0	:	0	Ga=d,d=A	:/Users/kuldeep	1	zsh	:
+pane	0	5	0	:	0	:/Users/kuldeep/Documents/ai-authoring-test-generation-e2e	:/Users/kuldeep/Documents/observability-configs	1	zsh	:
+pane	1	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	10	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	11	0	1	:*	0	SL-2491	:/System/Applications	1	zsh	:
+pane	12	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	13	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	14	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	15	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	16	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	17	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	18	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	19	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	2	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	20	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	21	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	22	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	23	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	24	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	25	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	26	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	27	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	28	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	29	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	30	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	31	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	32	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	33	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	34	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	35	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	36	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	37	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	38	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	4	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	6	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	8	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+pane	9	0	1	:*	0	SL-2491	:/Users/kuldeep	1	zsh	:
+window	0	0	:Coding Setup	1	:*	d0c4,237x56,0,0{164x56,0,0,1,72x56,165,0,2}	off
+window	0	1	:Running Servers	0	:	c6b2,254x62,0,0{126x62,0,0[126x31,0,0,3,126x30,0,32,4],127x62,127,0[127x31,127,0,5,127x30,127,32{63x30,127,32,6,63x30,191,32,7}]}	off
+window	0	2	:Claude	0	:	b9e5,254x62,0,0,8	off
+window	0	3	:Terminals	0	:-	4393,237x56,0,0[237x30,0,0,9,237x25,0,31{115x25,0,31,10,121x25,116,31,11}]	off
+window	0	4	:Youtube	0	:	5d21,254x62,0,0,12	off
+window	0	5	:zsh	0	:	5d22,254x62,0,0,13	:
+window	1	0	:zsh	1	:*	67a3,214x58,0,0,14	:
+window	10	0	:zsh	1	:*	67a4,214x58,0,0,15	:
+window	11	0	:zsh	1	:*	67a5,214x58,0,0,16	:
+window	12	0	:zsh	1	:*	67a6,214x58,0,0,17	:
+window	13	0	:zsh	1	:*	67a7,214x58,0,0,18	:
+window	14	0	:zsh	1	:*	67a8,214x58,0,0,19	:
+window	15	0	:zsh	1	:*	e79f,214x58,0,0,20	:
+window	16	0	:zsh	1	:*	e7a0,214x58,0,0,21	:
+window	17	0	:zsh	1	:*	e7a1,214x58,0,0,22	:
+window	18	0	:zsh	1	:*	e7a2,214x58,0,0,23	:
+window	19	0	:zsh	1	:*	e7a3,214x58,0,0,24	:
+window	2	0	:zsh	1	:*	e7a4,214x58,0,0,25	:
+window	20	0	:zsh	1	:*	e7a5,214x58,0,0,26	:
+window	21	0	:zsh	1	:*	e7a6,214x58,0,0,27	:
+window	22	0	:zsh	1	:*	e7a7,214x58,0,0,28	:
+window	23	0	:zsh	1	:*	e7a8,214x58,0,0,29	:
+window	24	0	:zsh	1	:*	67a0,214x58,0,0,30	:
+window	25	0	:zsh	1	:*	67a1,214x58,0,0,31	:
+window	26	0	:zsh	1	:*	67a2,214x58,0,0,32	:
+window	27	0	:zsh	1	:*	67a3,214x58,0,0,33	:
+window	28	0	:zsh	1	:*	67a4,214x58,0,0,34	:
+window	29	0	:zsh	1	:*	67a5,214x58,0,0,35	:
+window	30	0	:zsh	1	:*	67a6,214x58,0,0,36	:
+window	31	0	:zsh	1	:*	67a7,214x58,0,0,37	:
+window	32	0	:zsh	1	:*	67a8,214x58,0,0,38	:
+window	33	0	:zsh	1	:*	67a9,214x58,0,0,39	:
+window	34	0	:zsh	1	:*	e7a0,214x58,0,0,40	:
+window	35	0	:zsh	1	:*	e7a1,214x58,0,0,41	:
+window	36	0	:zsh	1	:*	e7a2,214x58,0,0,42	:
+window	37	0	:zsh	1	:*	e7a3,214x58,0,0,43	:
+window	38	0	:zsh	1	:*	e7a4,214x58,0,0,44	:
+window	4	0	:zsh	1	:*	e7a5,214x58,0,0,45	:
+window	6	0	:zsh	1	:*	e7a6,214x58,0,0,46	:
+window	8	0	:zsh	1	:*	e7a7,214x58,0,0,47	:
+window	9	0	:zsh	1	:*	e7a8,214x58,0,0,48	:
+state	0	4
